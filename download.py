@@ -13,7 +13,7 @@ def download_files_from_file(file_name, folder_name):
     # Download each file and save it in the folder
     for i, url in enumerate(url_list):
         url = url.strip()  # Remove leading/trailing whitespace and newline characters
-        file_name = os.path.join(folder_name, f"file_{i+1}.pdf")  # Naming the files as file_1.pdf, file_2.pdf, ...
+        file_name = os.path.join(folder_name, f"{folder_name}_file_{i+1}.pdf")  # Naming the files as folder_name_file_1.pdf, folder_name_file_2.pdf, ...
         response = requests.get(url)
         with open(file_name, 'wb') as file:
             file.write(response.content)
